@@ -558,10 +558,97 @@ footer .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-t
 /* end-of-report seal */
 .endseal{text-align:center;margin-top:30px;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 
+/* ---------- architecture flow (data stack to executive package) ---------- */
+.arch-container{margin-top:38px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:32px 28px;box-shadow:var(--shadow)}
+.arch-header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px;border-bottom:1px solid var(--line-2);padding-bottom:16px}
+.arch-title{font-family:var(--serif);font-size:1.25rem;color:var(--ink);margin:0}
+.arch-legend{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.arch-legend span{display:inline-flex;align-items:center;gap:6px}
+.arch-dot{width:8px;height:8px;border-radius:50%}
+.arch-dot.owned{background:var(--pos)}
+.arch-dot.partnered{background:var(--accent)}
+.arch-dot.platform{background:var(--muted)}
+.arch-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;position:relative}
+@media(max-width:1080px){.arch-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(max-width:640px){.arch-grid{grid-template-columns:1fr;gap:14px}}
+.arch-node{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.arch-node.is-owned{border-color:color-mix(in srgb,var(--pos) 40%,var(--line));background:color-mix(in srgb,var(--pos) 4%,var(--paper))}
+.arch-node.is-partnered{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));background:color-mix(in srgb,var(--accent) 4%,var(--paper))}
+.arch-step-num{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.arch-step-name{font-family:var(--sans);font-weight:600;font-size:.86rem;color:var(--ink);line-height:1.25;margin-bottom:8px}
+.arch-step-desc{font-size:.74rem;color:var(--body);line-height:1.5;margin-bottom:12px;flex-grow:1}
+.arch-badge{display:inline-block;padding:3px 7px;border-radius:4px;font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.arch-badge.owned{background:color-mix(in srgb,var(--pos) 15%,#fff);color:var(--pos);border:1px solid color-mix(in srgb,var(--pos) 30%,transparent)}
+.arch-badge.partnered{background:color-mix(in srgb,var(--accent) 15%,#fff);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.arch-badge.platform{background:var(--paper-2);color:var(--muted);border:1px solid var(--line)}
+
+/* ---------- dual competency groups (CH 04) ---------- */
+.skills-two-group{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:34px}
+@media(max-width:840px){.skills-two-group{grid-template-columns:1fr}}
+.skill-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 24px;box-shadow:var(--shadow)}
+.skill-box-h{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin:0 0 8px;display:flex;align-items:center;gap:10px}
+.skill-box-desc{font-size:.84rem;color:var(--muted);margin-bottom:18px;line-height:1.5}
+
 @media(prefers-reduced-motion:reduce){
   .js [data-rv]{opacity:1!important;transform:none!important;clip-path:none!important}
   .hero-fx{animation:none;opacity:1;transform:none}
   .js .build tr{opacity:1;transform:none;animation:none}
   .rticker-track{animation:none}
   .ch-tag .ln{transform:scaleX(1)}
+}
+
+/* ============================================================
+   R-059 & R-060 — PRINT & PDF RESILIENCE
+   Ensures print view / Save-as-PDF never renders blank charts
+   or zeroed numbers. Forces final states & disables keyframe pauses.
+   ============================================================ */
+@media print {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    background: #fff !important;
+    color: #0B1D33 !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  /* Show all elements hidden by JS observer or scroll systems */
+  .js [data-rv], .rv, .fade, .fadeup, .hero-fx, .bk-cell, .bv-cell, .js .build tr, .af-node, .af-gate {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  /* Force charts & SVGs to show full paths/bars */
+  .draw, path.draw {
+    stroke-dashoffset: 0 !important;
+  }
+  .grow, .growx, .dv-bar i, .pb-bars i {
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .ringfill, #pbRing, #afGauge {
+    stroke-dashoffset: 0 !important;
+  }
+  #bkCurDot, #bkCurTxt, #bkThresh, #bkTxt, #bkArea, #kpArea, #dvArea {
+    opacity: 1 !important;
+  }
+  /* Hide navigation rails, ticker, progress bars */
+  .toc, .toc-prog, .mchap, #progress, #prog, #site-header, .rticker, .hero-btns, .ex-go {
+    display: none !important;
+  }
+  /* Ensure page breaks fall cleanly between chapters */
+  .chapter, .stage, .exec-sum, .pg-hero {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  section {
+    padding: 30px 20px !important;
+  }
 }

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enterprise KPI Dashboards & Reporting Controls</title>
-<meta name="description" content="FP&A case study: designing and safeguarding executive KPI dashboards — architecture, formula diagnostics, and regression testing for reporting defects."/>
+<title>Reporting Integrity Through a Data Platform Migration</title>
+<meta name="description" content="FP&A case study: keeping executive reporting accurate while master data migrated to MDM and reporting moved to a data warehouse."/>
 <meta name="robots" content="index,follow"/>
 <link rel="canonical" href="https://nehabandekar.com/kpi-dashboards"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="Enterprise KPI Dashboards & Reporting Controls"/>
-<meta property="og:description" content="FP&A case study: designing and safeguarding executive KPI dashboards — architecture, formula diagnostics, and regression testing for reporting defects."/>
+<meta property="og:title" content="Reporting Integrity Through a Data Platform Migration"/>
+<meta property="og:description" content="Executive reporting built on spreadsheet logic that silently depended on upstream identifiers, naming conventions and refresh timing — and what it took to keep the numbers right while the data platform changed underneath them."/>
 <meta property="og:url" content="https://nehabandekar.com/kpi-dashboards"/>
 <meta property="og:image" content="https://nehabandekar.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -18,8 +18,8 @@
 <meta property="og:site_name" content="Neha Manohar Bandekar — Senior Financial Analyst"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://nehabandekar.com/og-image.png"/>
-<meta name="twitter:title" content="Enterprise KPI Dashboards & Reporting Controls"/>
-<meta name="twitter:description" content="FP&A case study: designing and safeguarding executive KPI dashboards — architecture, formula diagnostics, and regression testing for reporting defects."/>
+<meta name="twitter:title" content="Reporting Integrity Through a Data Platform Migration"/>
+<meta name="twitter:description" content="Executive reporting built on spreadsheet logic that silently depended on upstream identifiers, naming conventions and refresh timing — and what it took to keep the numbers right while the data platform changed underneath them."/>
 <meta name="theme-color" content="#17727E"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1D33'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23fff' text-anchor='middle'%3ENB%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +30,8 @@
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"https://nehabandekar.com/"},
 {"@type":"ListItem","position":2,"name":"Projects","item":"https://nehabandekar.com/#cases"},
-{"@type":"ListItem","position":3,"name":"Enterprise KPI Dashboards &amp; Reporting Controls","item":"https://nehabandekar.com/kpi-dashboards"}]},
-{"@type":"CreativeWork","name":"Enterprise KPI Dashboards &amp; Reporting Controls","about":"Enterprise KPI dashboard design, formula diagnostics, and reporting data-integrity controls","headline":"Enterprise KPI Dashboards &amp; Reporting Controls","creator":{"@type":"Person","name":"Neha Manohar Bandekar","jobTitle":"Senior Financial Analyst, FP&A"},"keywords":"KPI Reporting, Financial Dashboard, Power BI, Data Integrity, Reporting Controls, FP&A, Executive Reporting","description":"An FP&A case study on designing and safeguarding recurring executive KPI dashboards — combining dashboard architecture, formula diagnostics, automation, and the regression testing that catches silent reporting defects."}]}
+{"@type":"ListItem","position":3,"name":"Reporting Integrity Through a Data Platform Migration","item":"https://nehabandekar.com/kpi-dashboards"}]},
+{"@type":"CreativeWork","name":"Reporting Integrity Through a Data Platform Migration","about":"Master data and data warehouse migration, root-cause defect diagnostics, and data integrity controls","headline":"Reporting Integrity Through a Data Platform Migration","creator":{"@type":"Person","name":"Neha Manohar Bandekar","jobTitle":"Senior Financial Analyst, FP&A"},"keywords":"Master Data Management, MDM, Data Warehouse, Fabric, SQL, Data Integrity, Reporting Controls, FP&A, Executive Reporting","description":"An FP&A case study on keeping executive reporting accurate while master data migrated to MDM and reporting moved to a data warehouse layer — diagnosing four defect classes and establishing the platform-owner validation gate."}]}
 </script>
 <style>
 .kp-top{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
@@ -73,21 +73,21 @@
 </header>
 <main>
 <nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--maxw);margin:0 auto;padding:96px var(--pad) 0">
-  <a href="/">Home</a><span class="sep">/</span><a href="/#cases">Projects</a><span class="sep">/</span><span>KPI Dashboards</span>
+  <a href="/">Home</a><span class="sep">/</span><a href="/#cases">Projects</a><span class="sep">/</span><span>Data Platform Migration</span>
 </nav>
 <header class="pg-hero">
   <div class="wrap">
-    <div class="pg-kicker"><span class="num">CASE 04 / 07</span> <span>Daily · weekly · monthly executive reporting</span></div>
-    <h1>Enterprise KPI Dashboards & Reporting Controls</h1>
-    <p class="pg-lede">Designing and safeguarding recurring KPI dashboards leadership uses to monitor and steer performance — and tracing hidden data-integrity defects before they distort reported results.</p>
-    <div class="badges"><span class="badge led">Finance logic — Owned</span><span class="badge led">Diagnostics — Owned</span><span class="badge led">Validation — Owned</span><span class="badge led">Dashboard design — Built</span><span class="badge co">Dashboard delivery — Partnered</span></div>
+    <div class="pg-kicker"><span class="num">CASE 04 / 07</span> <span>MULTI-BUSINESS-UNIT PROFESSIONAL-SERVICES COMPANY · PLATFORM MIGRATION IN PROGRESS</span></div>
+    <h1>Reporting Integrity Through a Data Platform Migration</h1>
+    <p class="pg-lede">Executive reporting built on spreadsheet logic that silently depended on upstream identifiers, naming conventions and refresh timing — and what it took to keep the numbers right while the data platform changed underneath them.</p>
+    <div class="badges"><span class="badge led">Root-cause diagnosis — Owned</span><span class="badge led">Source logic redesign — Owned</span><span class="badge led">Validation &amp; regression testing — Owned</span><span class="badge led">Query specification — Owned</span><span class="badge co">Query development — Partnered (Platform/BI Team)</span><span class="badge sup">Warehouse pipelines &amp; lakehouse tables — Platform Team</span><span class="badge co">Dashboard delivery — Partnered</span></div>
   </div>
 </header>
 
 <div class="exec-sum">
   <div class="es-inner">
     <div class="es-label">Executive Summary</div>
-    <div class="es-body"><p>Executive decisions across a multi-business-unit professional-services company (15+ departments) depended on recurring dashboards spanning daily, weekly, monthly, and six-month cadences. Their formulas, date boundaries, lookup ranges, and source tabs could silently distort results — a small formula error is a real gap in reported performance.</p><p>I owned the finance logic, diagnostics, validation, and delivery of the dashboard suite, and instituted a data-integrity discipline: every fix was generalized across periods, tested for overlap and double-counting, and regression-tested before rollout. The signature outcome was tracing a hidden period-boundary defect that was excluding final-day sales.</p></div>
+    <div class="es-body"><p>Leadership steered the business off recurring dashboards spanning daily, weekly, monthly and trailing-twelve-month cadences, covering 15+ departments across multiple entities. The reporting logic sat in spreadsheets that resolved classifications by looking up identifiers against a central database, and that assumed source records would keep the same shape, the same names and the same refresh timing they had always had.</p><p>Over one reporting period the company began migrating master data to an MDM platform and moving reporting onto a warehouse and lakehouse layer. Four defects surfaced in quick succession — none caused by a formula anyone typed wrong, all caused by an upstream property changing. Every one produced numbers that looked entirely plausible in the output.</p><p>I owned the diagnosis, the source-logic redesign and the validation, and established the control that made the corrections stick: a reporting figure is not resolved until the platform owner who owns the underlying data has seen and validated the logic that produced it.</p></div>
   </div>
 </div>
 
@@ -130,24 +130,123 @@
     </div>
   </div>
 </div></div>
-<p class="stage-cap">Interactive synthetic monitor on deterministic KPIs. Filter the trailing window (12M/6M/3M) and see the period-boundary defect (26 vs 28) and its regression-tested correction.</p>
+<p class="stage-cap">Interactive synthetic monitor on deterministic KPIs. Filter the trailing window (12M / 6M / 3M) and see the period-boundary defect (26 vs 28) and its regression-tested correction — one of four defect classes described below.</p>
 
 <div class="engage">
   <div class="engage-wrap">
     <div class="case-flow">
-      <section class="cs" id="ctx"><h2><span class="n">01</span>Business problem</h2><p>Leadership steered the business off a set of live performance dashboards. Because those dashboards were consulted constantly and rebuilt rarely, any defect embedded in a formula or date boundary would propagate quietly across every period without becoming obvious in the reported output.</p></section><section class="cs" id="role"><h2><span class="n">02</span>My role</h2><p>Finance logic — Owned. Diagnostics — Owned. Validation — Owned. Dashboard design — Built. Dashboard delivery — Partnered.</p></section><section class="cs" id="challenge"><h2><span class="n">03</span>Approach &amp; controls</h2><p>Reporting logic is deceptively fragile. A timestamp boundary that excludes the final day of a period, a lookup range that drifts, or a hardcoded date buried in a scorecard can each misstate performance while looking entirely plausible. Fixes carried their own risk: a correction applied carelessly across many periods can introduce double-counting.</p><ul><li>Diagnosed a hidden timestamp boundary that excluded every final-day sale from period totals, and validated the corrected date-boundary logic across historical periods and tested for overlap/double-counting before rollout.</li><li>Reverse-engineered and rebuilt a full-year weekly tracker, correcting lookup, range, and hardcoded-date defects.</li><li>Rebuilt hardcoded scorecards into live formulas and designed self-contained dashboards with fallback data-upload paths.</li><li>Built and partnered on the broader dashboard suite across requirements, finance logic, validation, and delivery.</li></ul><p>Each defect was worked from symptom to root cause, corrected generically, then regression-tested against known-good periods before release. A reporting fix was considered complete only after it reproduced correctly across historical comparison periods without introducing overlap or downstream defects.</p></section><section class="cs" id="results"><h2><span class="n">04</span>Outcome</h2><div class="results-grid"><div class="result"><div class="v">Restored</div><div class="k">Final-day activity restored to period totals; synthetic exhibit shows 26 → 28 to demonstrate the corrected date-boundary logic</div></div><div class="result"><div class="v">12 months</div><div class="k">Weekly tracker rebuilt with corrected lookup and range logic</div></div><div class="result"><div class="v">Live logic</div><div class="k">Hardcoded scorecards rebuilt into validated, self-contained dashboards</div></div></div></section><section class="cs" id="interactive"><h2><span class="n">05</span>Interactive recreation</h2><p>The monitor above is a working recreation of the rolling 12-month dashboard and the period-boundary defect demonstration.</p></section><section class="cs" id="lessons"><h2><span class="n">06</span>What I'd improve next</h2><ul><li>The most dangerous reporting errors are the ones that look right; only regression testing reliably surfaces them.</li><li>Self-contained dashboards with explicit source hierarchy age far better than clever interconnected ones.</li><li><b>Recommendation:</b> wrap the reusable formula patterns in an automated regression suite that runs on every refresh, so a boundary or lookup defect is flagged at the moment it appears.</li></ul></section>
+      <section class="cs" id="ctx">
+        <h2><span class="n">01</span>Business problem</h2>
+        <p>Dashboards that are consulted constantly and rebuilt rarely accumulate hidden dependencies. Classification logic in particular is fragile: when a system provides no flag for what something is, downstream logic has to infer it — by looking up an identifier, matching a name, or comparing a date. Each inference is a silent dependency on a source property nobody has agreed to keep stable.</p>
+        <p>A platform migration changes several of those properties at once. Identifiers move. Naming conventions get standardised. Refresh schedules start overlapping. The reporting output does not announce any of it — it just gets quieter about being wrong.</p>
+      </section>
+      
+      <section class="cs" id="role">
+        <h2><span class="n">02</span>My role</h2>
+        <p>Root-cause diagnosis — Owned. Source logic redesign — Owned. Validation and regression testing — Owned. Query specification — Owned. Query development — Partnered with the platform / BI team, who own the warehouse and lakehouse tables. Dashboard delivery — Partnered.</p>
+      </section>
+      
+      <section class="cs" id="challenge">
+        <h2><span class="n">03</span>Approach &amp; controls</h2>
+        <p>Four defect classes, worked from symptom to root cause:</p>
+        <ul>
+          <li><b>Hidden timestamp boundary:</b> Period totals excluded every final-day transaction because source dates carried a time component the boundary logic did not account for. Corrected generically across periods, then tested for overlap and double-counting before rollout.</li>
+          <li><b>Identifier lookup break during master-data migration:</b> With no system-level flag distinguishing new business from renewals, the logic classified a deal by looking up its ERP identifier against the central database and checking for a prior record in the same product category. When that database moved to the MDM platform the lookups broke, the helper columns stopped populating, and every renewal was silently reclassified as new. In the clearest month, a raw pull returning 13 deals resolved to 5 once renewals were correctly excluded.</li>
+          <li><b>Upstream naming-convention change:</b> A standardisation applied at the system level severed the joins that downstream team-level reporting depended on. Isolated with the platform team and rebuilt on a source structure that did not depend on the old convention.</li>
+          <li><b>Automation colliding with warehouse loads:</b> A scheduled script writing into sheets that also received pipeline uploads could execute concurrently with a load, producing stale, incomplete or blanked data. I disabled the affected automation and moved the process onto a pipeline-fed source before the issue reached reporting.</li>
+        </ul>
+        <h3 style="font-size:1.1rem;margin:24px 0 12px;font-family:var(--serif);color:var(--ink)">Controls established:</h3>
+        <ul>
+          <li>Scheduled refreshes alert on failure, so a job that does not run announces itself rather than quietly serving yesterday's data.</li>
+          <li>No automation writes to a source that a pipeline also loads. Ownership of a data surface is exclusive.</li>
+          <li>Fixes are made at the source, not in the helper column. A patched lookup survives until the next migration; a corrected source of truth does not need to.</li>
+          <li><b>Platform-owner validation gate:</b> Where a correction depends on warehouse data, the tech owner reviews and validates the logic before the number is reported. This is not escalation — it is what allows a stakeholder to accept a restated figure without relitigating it.</li>
+        </ul>
+        <p style="font-style:italic;margin-top:20px;color:var(--ink-2)"><b>The decision rule:</b> if reporting and a business owner's own reconciliation disagree, the answer is not to defend either number — it is to put both on the same source.</p>
+      </section>
+      
+      <section class="cs" id="results">
+        <h2><span class="n">04</span>Outcome</h2>
+        <div class="results-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+          <div class="result"><div class="v">Single source</div><div class="k">Reporting and the business owner's independent reconciliation now resolve from the same underlying query, the one feeding the enterprise dashboard, rather than from two parallel derivations.</div></div>
+          <div class="result"><div class="v">Restored</div><div class="k">Final-day activity returned to period totals; synthetic exhibit shows 26 → 28 to demonstrate the corrected boundary logic.</div></div>
+          <div class="result"><div class="v">Root-caused</div><div class="k">Four defect classes traced to upstream source properties rather than formula error, each corrected generically and regression-tested.</div></div>
+          <div class="result"><div class="v">Sequenced</div><div class="k">Prior-period restatement staged behind full-year validation with the business owner rather than released piecemeal.</div></div>
+        </div>
+      </section>
+      
+      <section class="cs" id="interactive">
+        <h2><span class="n">05</span>Interactive recreation</h2>
+        <p>The monitor above is a working recreation of the rolling dashboard and the period-boundary defect demonstration. Toggle the trailing window to see the corrected logic.</p>
+      </section>
+      
+      <section class="cs" id="lessons">
+        <h2><span class="n">06</span>What I'd improve next</h2>
+        <ul>
+          <li>The defects that survive longest are the ones where reporting has to infer a classification the source system never recorded. A better lookup is a patch; a system-level flag is the fix.</li>
+          <li>Automation that a finance team builds during a platform gap should be designed to be retired. The measure of it working is that the platform makes it unnecessary.</li>
+          <li><b>Recommendation:</b> treat every downstream dependency on an upstream property — identifier, naming convention, refresh window — as a documented contract with the data owner, so a change on their side arrives as a notification rather than as a variance nobody can explain.</li>
+        </ul>
+      </section>
     </div>
+    
     <aside class="rail">
-      <div class="rail-card"><h3>Business impact</h3><div class="rail-kpi"><div><div class="v figure">12-mo</div><div class="k">Rolling window</div></div><div><div class="v figure">4</div><div class="k">Cadences</div></div><div><div class="v figure">Passed</div><div class="k">Overlap validation</div></div><div><div class="v figure">Regression</div><div class="k">Tested across periods</div></div></div></div>
-      <div class="rail-card"><h3>Technology</h3><div class="rail-chips"><span>Google Sheets architecture</span><span>Excel</span><span>Power BI</span></div></div>
-      <div class="rail-card"><h3>Methods &amp; Controls</h3><ul class="rail-list"><li><span>Rolling trend monitoring</span><span class="tag">method</span></li><li><span>Formula diagnostics</span><span class="tag">control</span></li><li><span>Root-cause diagnostics</span><span class="tag">control</span></li><li><span>Regression testing &amp; validation</span><span class="tag">control</span></li><li><span>Source hierarchy</span><span class="tag">control</span></li></ul></div>
-      <div class="rail-card"><h3>Visualization / Reporting Design</h3><div class="rail-chips"><span>Small multiples</span></div></div>
-      <div class="rail-card"><h3>Key Metrics / Measures Reviewed</h3><div class="rail-chips"><span>Rolling 12M revenue</span><span>Conversion rate</span><span>NPS</span><span>Survey completion</span><span>Business-unit trend</span></div></div>
+      <div class="rail-card">
+        <h3>Business impact</h3>
+        <div class="rail-kpi">
+          <div><div class="v figure">4</div><div class="k">Defect classes root-caused</div></div>
+          <div><div class="v figure" style="font-size:1rem">Single source</div><div class="k">Reporting &amp; owner reconciliation aligned</div></div>
+          <div><div class="v figure">Regression</div><div class="k">Tested across periods</div></div>
+          <div><div class="v figure">15+</div><div class="k">Departments dependent</div></div>
+        </div>
+      </div>
+      <div class="rail-card">
+        <h3>Technology</h3>
+        <div class="rail-chips">
+          <span>MDM / master data platform</span>
+          <span>ERP/GL extracts</span>
+          <span>Data warehouse &amp; lakehouse views</span>
+          <span>SQL against governed views</span>
+          <span>Power BI</span>
+          <span>Google Sheets architecture</span>
+          <span>Excel / Power Query</span>
+          <span>Scheduled automation with failure alerting</span>
+        </div>
+      </div>
+      <div class="rail-card">
+        <h3>Methods &amp; Controls</h3>
+        <ul class="rail-list">
+          <li><span>Root-cause diagnostics</span><span class="tag">control</span></li>
+          <li><span>Regression testing &amp; validation</span><span class="tag">control</span></li>
+          <li><span>Source hierarchy &amp; exclusive ownership of data surfaces</span><span class="tag">control</span></li>
+          <li><span>Refresh-failure alerting</span><span class="tag">control</span></li>
+          <li><span>Platform-owner validation gate</span><span class="tag">control</span></li>
+          <li><span>Single-source-of-truth reconciliation</span><span class="tag">method</span></li>
+          <li><span>Restatement sequencing</span><span class="tag">method</span></li>
+        </ul>
+      </div>
+      <div class="rail-card">
+        <h3>Visualization / Reporting Design</h3>
+        <div class="rail-chips">
+          <span>Small multiples</span>
+          <span>Defect before/after comparison</span>
+        </div>
+      </div>
+      <div class="rail-card">
+        <h3>Key Metrics / Measures Reviewed</h3>
+        <div class="rail-chips">
+          <span>New vs. renewal classification</span>
+          <span>Rolling 12M revenue</span>
+          <span>Conversion rate</span>
+          <span>Period-boundary completeness</span>
+          <span>Cross-system count reconciliation</span>
+        </div>
+      </div>
     </aside>
   </div>
 </div>
 
-<p class="pg-disclaimer">Recreated case study · Synthetic data · No confidential employer materials. Live dashboards, formulas, file structures, targets, and branding are not reproduced. Illustrated with fictional KPIs and a new visual layout.</p>
+<p class="pg-disclaimer">Recreated case study · Synthetic data · No confidential employer materials. Live dashboards, formulas, file structures, system names and figures are not reproduced. Illustrated with fictional metrics and a new visual layout. Migration described is ongoing; outcomes reflect corrections landed to date.</p>
 
 <div class="nextp">
   <a class="nextp-inner" href="/ai-fpa">
@@ -159,7 +258,7 @@
 <footer>
   <span class="copy">© 2026 Neha Manohar Bandekar · Senior Financial Analyst, FP&amp;A · Arizona, USA</span>
   <nav class="fnav"><a href="/">Home</a><a href="/#cases">Projects</a><a href="/#contact">Contact</a></nav>
-  <span class="tag">FP&amp;A · Executive Reporting · Decision Support</span>
+  <span class="tag">FP&amp;A · Executive Reporting · Data Integrity</span>
 </footer>
 <script>
 (function(){
@@ -174,6 +273,14 @@
     var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}});},{threshold:.4});
     document.querySelectorAll('.count[data-to]').forEach(function(el){io.observe(el);});
   })();
+
+  window.addEventListener('beforeprint', function(){
+    document.querySelectorAll('.count[data-to]').forEach(function(el){
+      var to=+el.dataset.to,pre=el.dataset.pre||'',suf=el.dataset.suf||'',dec=+(el.dataset.dec||0);
+      el.textContent=pre+(dec?to.toFixed(dec):Math.round(to).toLocaleString())+suf;
+    });
+    var area=document.getElementById('kpArea'); if(area) area.style.opacity='0.5';
+  });
 
 
   (function(){
