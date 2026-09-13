@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nehabandekar.com/sitemap.xml

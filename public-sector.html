@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Public-Sector Close, AP & Working Capital</title>
+<meta name="description" content="FP&A case study: high-volume public-sector AP and month-end close — reconciliations, journal-entry controls, and AR follow-up, audit-ready by design."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://nehabandekar.com/public-sector"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Public-Sector Close, AP & Working Capital"/>
+<meta property="og:description" content="FP&A case study: high-volume public-sector AP and month-end close — reconciliations, journal-entry controls, and AR follow-up, audit-ready by design."/>
+<meta property="og:url" content="https://nehabandekar.com/public-sector"/>
+<meta property="og:image" content="https://nehabandekar.com/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Neha Manohar Bandekar — Senior Financial Analyst, FP&A"/>
+<meta property="og:site_name" content="Neha Manohar Bandekar — Senior Financial Analyst"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nehabandekar.com/og-image.png"/>
+<meta name="twitter:title" content="Public-Sector Close, AP & Working Capital"/>
+<meta name="twitter:description" content="FP&A case study: high-volume public-sector AP and month-end close — reconciliations, journal-entry controls, and AR follow-up, audit-ready by design."/>
+<meta name="theme-color" content="#2C5F8A"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1D33'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23fff' text-anchor='middle'%3ENB%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://nehabandekar.com/"},
+{"@type":"ListItem","position":2,"name":"Projects","item":"https://nehabandekar.com/#cases"},
+{"@type":"ListItem","position":3,"name":"Public-Sector Close, AP &amp; Working-Capital Visibility","item":"https://nehabandekar.com/public-sector"}]},
+{"@type":"CreativeWork","name":"Public-Sector Close, AP &amp; Working-Capital Visibility","about":"High-volume public-sector accounts payable, month-end close, and working-capital visibility","headline":"Public-Sector Close, AP &amp; Working-Capital Visibility","creator":{"@type":"Person","name":"Neha Manohar Bandekar","jobTitle":"Senior Financial Analyst, FP&A"},"keywords":"Accounts Payable, Month-End Close, Reconciliation, Working Capital, Public Sector Finance, Audit Readiness, GAAP","description":"An FP&A and controllership case study on improving high-volume public-sector finance operations — combining AP workflow design, month-end reconciliation, journal-entry controls, and AR follow-up, audit-ready by design."}]}
+</script>
+<style>
+.pb-top{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;margin-bottom:22px}
+@media(max-width:760px){.pb-top{grid-template-columns:1fr;gap:26px}}
+.pb-card{border:1px solid var(--line-2);border-radius:10px;padding:18px}
+.pb-bars{display:flex;align-items:flex-end;gap:9px;height:110px;margin:14px 0 12px}
+.pb-bars i{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--accent),var(--accent-soft));transform-origin:bottom}
+.pb-cap{font-size:.82rem;color:var(--muted)}.pb-cap b{color:var(--ink);font-family:var(--serif);font-size:1.05rem}
+.pb-ring{text-align:center}
+.pb-lower{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;border-top:1px solid var(--line-2);padding-top:20px}
+@media(max-width:680px){.pb-lower{grid-template-columns:1fr;gap:24px}}
+.pb-age{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;margin-bottom:11px;font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+.pb-age .dv-bar i{background:var(--pos)}.pb-age .dv-bar i.warn{background:var(--warn)}.pb-age .dv-bar i.bad{background:var(--neg)}
+.pb-task{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--ink-2);padding:7px 0;border-bottom:1px solid var(--line-2)}
+.pb-task b{color:var(--pos)}
+.pb-audit{margin-top:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--pos);border:1px solid color-mix(in srgb,var(--pos) 30%,var(--line));border-radius:7px;padding:9px 12px;text-align:center}
+
+.pg-hero,.pg-hero::after,.pg-kicker,.pg-kicker .num,.pg-hero h1 .em,.cs h2 .n,.result,.es-inner,.es-label,.stage .panel-title .sq,.nextp-inner:hover{}
+:root{--accent:#2C5F8A;--accent-soft:#E7EFF6;}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<header id="site-header">
+  <a class="brand" href="/" aria-label="Home — Neha Manohar Bandekar">
+    <span class="monogram">NB</span>
+    <span class="brand-txt"><b>Neha Manohar Bandekar</b><span>Senior Financial Analyst · FP&amp;A</span></span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="/#cases">Projects</a>
+    <a href="/#career">Experience</a>
+    <a href="/#expertise">Competencies</a>
+    <a class="nav-cta" href="/#contact">Contact</a>
+  </nav>
+</header>
+<main>
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--maxw);margin:0 auto;padding:96px var(--pad) 0">
+  <a href="/">Home</a><span class="sep">/</span><a href="/#cases">Projects</a><span class="sep">/</span><span>Public-Sector Finance</span>
+</nav>
+<header class="pg-hero">
+  <div class="wrap">
+    <div class="pg-kicker"><span class="num">CASE 07 / 07</span> <span>U.S. public-sector agency</span></div>
+    <h1>Public-Sector Close, AP & Working-Capital Visibility</h1>
+    <p class="pg-lede">Supporting high-volume public-sector finance operations while preserving approvals, reconciliations, and audit-ready documentation.</p>
+    <div class="badges"><span class="badge led">AP workflow — Owned</span><span class="badge led">Reconciliations &amp; close schedules — Owned</span><span class="badge led">AR aging analysis — Owned</span><span class="badge sup">Final approvals — Management-owned</span></div>
+  </div>
+</header>
+
+<div class="exec-sum">
+  <div class="es-inner">
+    <div class="es-label">Executive Summary</div>
+    <div class="es-body"><p>A U.S. public-sector agency required high-volume invoice processing with accurate coding, documented approvals, reconciliations, and audit-ready support. Close timing hinged on bank and subledger reconciliations, accruals, and fast issue resolution, while working-capital visibility needed aging analysis across departments.</p><p>I supported high-volume AP and month-end close while improving workflow clarity, exception handling, and working-capital visibility without weakening documentation controls. In the public sector, a faster process that weakens documentation is a failure — every gain here was designed to survive an auditor’s review.</p></div>
+  </div>
+</div>
+
+<div class="stage">
+<div class="panel">
+  <div class="panel-bar"><span class="panel-title"><span class="sq"></span> Working Capital &amp; Month-End Close Cockpit</span><span class="panel-live">Close cycle</span></div>
+  <div class="panel-body">
+    <div class="pb-top">
+      <div class="pb-card">
+        <span class="ex-t">AP throughput — invoices / month</span>
+        <div class="pb-bars" role="img" aria-label="Bar chart of AP invoice throughput trending up over 8 periods">
+          <i class="grow" style="height:44%"></i><i class="grow" style="height:60%;animation-delay:.08s"></i><i class="grow" style="height:52%;animation-delay:.16s"></i><i class="grow" style="height:74%;animation-delay:.24s"></i><i class="grow" style="height:68%;animation-delay:.32s"></i><i class="grow" style="height:88%;animation-delay:.4s"></i><i class="grow" style="height:80%;animation-delay:.48s"></i><i class="grow" style="height:100%;animation-delay:.56s"></i>
+        </div>
+        <div class="pb-cap"><b class="count" data-to="1000" data-suf="+" data-dec="0">1,000+</b> processed monthly — workflow &amp; exception handling improved</div>
+      </div>
+      <div class="pb-card pb-ring">
+        <span class="ex-t">Month-end close progress</span>
+        <svg viewBox="0 0 120 120" class="viz" style="max-width:150px;margin:6px auto 0" role="img" aria-label="Ring chart showing month-end close progress percentage">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="var(--paper-2)" stroke-width="12"/>
+          <circle id="pbRing" class="ringfill" cx="60" cy="60" r="48" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="301.6" transform="rotate(-90 60 60)"/>
+          <text x="60" y="58" text-anchor="middle" font-family="var(--serif)" font-size="22" fill="var(--ink)" class="count" id="pbPct" data-to="100" data-suf="%" data-dec="0">0%</text>
+          <text x="60" y="74" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="var(--muted)">ON SCHEDULE</text>
+        </svg>
+      </div>
+    </div>
+    <div class="pb-lower">
+      <div>
+        <span class="ex-t">AR aging — prioritized follow-up</span>
+        <div class="pb-age"><span>0–30</span><div class="dv-bar"><i class="growx" style="width:100%"></i></div></div>
+        <div class="pb-age"><span>31–60</span><div class="dv-bar"><i class="growx" style="width:58%;animation-delay:.15s"></i></div></div>
+        <div class="pb-age"><span>61–90</span><div class="dv-bar"><i class="growx warn" style="width:34%;animation-delay:.3s"></i></div></div>
+        <div class="pb-age"><span>90+</span><div class="dv-bar"><i class="growx bad" style="width:19%;animation-delay:.45s"></i></div></div>
+      </div>
+      <div class="pb-close">
+        <span class="ex-t">Close checklist</span>
+        <div class="pb-task fadeup"><b>&#10003;</b> Bank reconciliation</div>
+        <div class="pb-task fadeup" style="animation-delay:.15s"><b>&#10003;</b> Subledger tie-out</div>
+        <div class="pb-task fadeup" style="animation-delay:.3s"><b>&#10003;</b> Accruals &amp; prepaids</div>
+        <div class="pb-task fadeup" style="animation-delay:.45s"><b>&#10003;</b> Journal entries</div>
+        <div class="pb-audit fadeup" style="animation-delay:.6s">Audit-ready trail preserved</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<p class="stage-cap">Illustrative close cockpit on synthetic data — AP throughput, month-end close progress, AR aging, and the checklist that keeps the audit trail intact.</p>
+
+<div class="engage">
+  <div class="engage-wrap">
+    <div class="case-flow">
+      <section class="cs" id="ctx"><h2><span class="n">01</span>Business problem</h2><p>Public-sector finance operates under formal documentation, approval, reconciliation, and audit requirements. Speed matters, but not at the expense of the approval chain, the reconciliation evidence, or the audit trail that a public agency is accountable for.</p></section><section class="cs" id="role"><h2><span class="n">02</span>My role</h2><p>AP workflow — Owned. Reconciliations &amp; close schedules — Owned. AR aging analysis — Owned. Final approvals — Management-owned.</p></section><section class="cs" id="challenge"><h2><span class="n">03</span>Approach &amp; controls</h2><p>High invoice volume created constant pressure to move faster, while month-end close depended on reconciliations, accruals, prepaids, and reclasses landing on schedule. Working-capital visibility required disciplined AR aging analysis across departments. The challenge was increasing throughput without weakening approval evidence, reconciliation discipline, or auditability.</p><ul><li>Managed a monthly AP process handling 1,000+ invoices, standardizing approval workflows and improving processing efficiency by 35%.</li><li>Performed bank and subledger reconciliations, journal entries, and close schedules, supporting a 3-day reduction in close-cycle timelines.</li><li>Analyzed AR aging and coordinated cross-functional resolution, accelerating collections by 18%.</li><li>Balanced process efficiency against public-sector documentation and control requirements at every step.</li></ul><p>Improvements were designed control-first: a faster workflow only shipped if it preserved evidence and approvals. Process improvements were accepted only when approval evidence, reconciliation support, and auditability were preserved.</p></section><section class="cs" id="results"><h2><span class="n">04</span>Outcome</h2><div class="results-grid"><div class="result"><div class="v">+35%</div><div class="k">Processing efficiency on a 1,000+ invoice/month AP operation</div></div><div class="result"><div class="v">+18%</div><div class="k">Faster collections through prioritized AR aging follow-up</div></div><div class="result"><div class="v">-3 days</div><div class="k">Reduction in month-end close-cycle timeline</div></div></div></section><section class="cs" id="interactive"><h2><span class="n">05</span>Interactive recreation</h2><p>The cockpit above is a working recreation of AP throughput, month-end close progress, and AR aging.</p></section><section class="cs" id="lessons"><h2><span class="n">06</span>What I'd improve next</h2><ul><li>In controlled environments, documentation and approval evidence are part of the deliverable — not administrative afterthoughts.</li><li>AR aging is both a financial-visibility and operating follow-up tool; prioritized follow-up changes outcomes.</li><li><b>Recommendation:</b> automate matching on high-volume PO-backed categories to cut manual coding further while preserving the documented-approval trail.</li></ul></section>
+    </div>
+    <aside class="rail">
+      <div class="rail-card"><h3>Business impact</h3><div class="rail-kpi"><div><div class="v figure">+35%</div><div class="k">AP efficiency</div></div><div><div class="v figure">+18%</div><div class="k">Faster collections</div></div><div><div class="v figure">-3 days</div><div class="k">Close cycle</div></div><div><div class="v figure">1,000+</div><div class="k">Invoices / mo</div></div></div></div>
+      <div class="rail-card"><h3>Technology</h3><div class="rail-chips"><span>ERP / AP system</span><span>Excel</span></div></div>
+      <div class="rail-card"><h3>Methods &amp; Controls</h3><ul class="rail-list"><li><span>Bank &amp; subledger reconciliation</span><span class="tag">control</span></li><li><span>AR aging analysis</span><span class="tag">analysis</span></li><li><span>Month-end close</span><span class="tag">method</span></li><li><span>Reconciliation roll-forward</span><span class="tag">control</span></li><li><span>Working-capital analysis</span><span class="tag">analysis</span></li></ul></div>
+      <div class="rail-card"><h3>Key Metrics / Measures Reviewed</h3><div class="rail-chips"><span>Invoice throughput</span><span>Close timing</span><span>AR aging buckets</span></div></div>
+    </aside>
+  </div>
+</div>
+
+<p class="pg-disclaimer">Recreated with a fictional public agency and synthetic data. Outcomes are stated only at the level supported by the original work; no government account, vendor, bank, or approval information is shown.</p>
+
+<div class="nextp">
+  <a class="nextp-inner" href="/#cases">
+    <div><div class="lab">Back to portfolio →</div><h3>All Case Studies</h3></div>
+    <span class="btn btn-primary go">Open case <span class="ar">→</span></span>
+  </a>
+</div>
+</main>
+<footer>
+  <span class="copy">© 2026 Neha Manohar Bandekar · Senior Financial Analyst, FP&amp;A · Arizona, USA</span>
+  <nav class="fnav"><a href="/">Home</a><a href="/#cases">Projects</a><a href="/#contact">Contact</a></nav>
+  <span class="tag">FP&amp;A · Executive Reporting · Decision Support</span>
+</footer>
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%';var hd=document.getElementById('site-header');hd.classList.toggle('solid',scrollY>30);},{passive:true});
+
+  (function(){
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function run(el){var to=+el.dataset.to,pre=el.dataset.pre||'',suf=el.dataset.suf||'',dec=+(el.dataset.dec||0),hold=el.dataset.hold?900:0,s;
+      if(reduce){el.textContent=pre+(dec?to.toFixed(dec):Math.round(to).toLocaleString())+suf;return;}
+      setTimeout(function(){s=performance.now();(function t(n){var p=Math.min((n-s)/1400,1),e=1-Math.pow(1-p,3),v=to*e;el.textContent=pre+(dec?v.toFixed(dec):Math.round(v).toLocaleString())+suf;if(p<1)requestAnimationFrame(t);})(performance.now());},hold);}
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}});},{threshold:.4});
+    document.querySelectorAll('.count[data-to]').forEach(function(el){io.observe(el);});
+  })();
+
+
+  (function(){var r=document.getElementById('pbRing');if(r){setTimeout(function(){r.style.strokeDashoffset=0;},400);}})();
+
+})();
+</script>
+</body>
+</html>

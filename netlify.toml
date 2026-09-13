@@ -1,0 +1,106 @@
+[build]
+  publish = "."
+
+# ---------------------------------------------------------------------------
+# R-061 — Canonical route consistency: extensionless is the public URL format.
+# 301 redirect every legacy .html URL to its clean equivalent, then serve the
+# clean path from the underlying .html file (200 rewrite, not a redirect).
+# Order matters: the 301s must come first so old .html links aren't served
+# twice (once at .html, once at the clean path).
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/new-division.html"
+  to = "/new-division"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/departmental-bva.html"
+  to = "/departmental-bva"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/executive-reporting.html"
+  to = "/executive-reporting"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kpi-dashboards.html"
+  to = "/kpi-dashboards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai-fpa.html"
+  to = "/ai-fpa"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/banking.html"
+  to = "/banking"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/public-sector.html"
+  to = "/public-sector"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/new-division"
+  to = "/new-division.html"
+  status = 200
+
+[[redirects]]
+  from = "/departmental-bva"
+  to = "/departmental-bva.html"
+  status = 200
+
+[[redirects]]
+  from = "/executive-reporting"
+  to = "/executive-reporting.html"
+  status = 200
+
+[[redirects]]
+  from = "/kpi-dashboards"
+  to = "/kpi-dashboards.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-fpa"
+  to = "/ai-fpa.html"
+  status = 200
+
+[[redirects]]
+  from = "/banking"
+  to = "/banking.html"
+  status = 200
+
+[[redirects]]
+  from = "/public-sector"
+  to = "/public-sector.html"
+  status = 200
+
+# ---------------------------------------------------------------------------
+# R-056 — Conservative security & privacy headers, site-wide.
+# Retest every page's console/network tab after applying, since a CSP that is
+# too strict will silently block the Google Fonts stylesheet/fonts below.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
