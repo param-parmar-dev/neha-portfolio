@@ -1,18 +1,22 @@
 # ---------------------------------------------------------------------------
-# Apache / cPanel URL Rewriting for Clean URLs
+# Apache / cPanel URL Rewriting for Clean URLs (No .html in browser)
 # ---------------------------------------------------------------------------
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# If the file or directory exists as-is, serve it directly
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+  # Redirect /page.html to /page (301 Permanent Redirect)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
 
-# Redirect .html requests to clean URLs
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]
+  # Internally serve the .html file when /page is requested
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
 
-# Rewrite extensionless URLs to their .html equivalent
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
+# Fallback if mod_rewrite is not enabled
+<IfModule !mod_rewrite.c>
+  Options +MultiViews
+</IfModule>
