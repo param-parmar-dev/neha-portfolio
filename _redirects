@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# Netlify Redirect Rules
+# Works for both Git builds and manual drag-and-drop deploys
+# ---------------------------------------------------------------------------
+
+# Clean URLs: rewrite extensionless URLs to their .html files
+/new-division             /new-division.html          200
+/departmental-bva         /departmental-bva.html      200
+/executive-reporting      /executive-reporting.html   200
+/kpi-dashboards           /kpi-dashboards.html        200
+/ai-fpa                   /ai-fpa.html                200
+/banking                  /banking.html               200
+/public-sector            /public-sector.html         200
+
+# 301 redirect legacy .html extensions to clean URLs
+/index.html               /                           301!
+/new-division.html        /new-division               301!
+/departmental-bva.html    /departmental-bva           301!
+/executive-reporting.html /executive-reporting        301!
+/kpi-dashboards.html      /kpi-dashboards             301!
+/ai-fpa.html              /ai-fpa                     301!
+/banking.html             /banking                    301!
+/public-sector.html       /public-sector              301!

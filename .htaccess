@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# Apache / cPanel URL Rewriting for Clean URLs
+# ---------------------------------------------------------------------------
+RewriteEngine On
+RewriteBase /
+
+# If the file or directory exists as-is, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect .html requests to clean URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Rewrite extensionless URLs to their .html equivalent
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
